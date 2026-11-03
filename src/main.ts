@@ -9,7 +9,9 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   // Global Prefix
-  app.setGlobalPrefix('api');
+  app.setGlobalPrefix('api', {
+    exclude: ['health', 'api/health'],
+  });
 
   // Global Exception Filter
   app.useGlobalFilters(new AllExceptionsFilter());
@@ -58,6 +60,7 @@ async function bootstrap() {
   const port = process.env.PORT || 4000;
   await app.listen(port);
   logger.log(`🚀 HRMS Backend Application running on http://localhost:${port}/api`);
+  logger.log(`❤️  Health Check available at http://localhost:${port}/health (and /api/health)`);
   logger.log(`📑 Swagger Documentation available at http://localhost:${port}/api/docs`);
 }
 bootstrap();

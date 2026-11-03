@@ -6,6 +6,7 @@ import { EmployeesModule } from './employees/employees.module';
 import { LeavesModule } from './leaves/leaves.module';
 import { SalaryModule } from './salary/salary.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { HealthModule } from './health/health.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
       envFilePath: '.env',
     }),
     DatabaseModule,
+    HealthModule,
     AuthModule,
     EmployeesModule,
     LeavesModule,

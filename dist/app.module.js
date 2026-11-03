@@ -15,6 +15,7 @@ const employees_module_1 = require("./employees/employees.module");
 const leaves_module_1 = require("./leaves/leaves.module");
 const salary_module_1 = require("./salary/salary.module");
 const dashboard_module_1 = require("./dashboard/dashboard.module");
+const health_module_1 = require("./health/health.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -26,6 +27,7 @@ exports.AppModule = AppModule = __decorate([
                 envFilePath: '.env',
             }),
             database_module_1.DatabaseModule,
+            health_module_1.HealthModule,
             auth_module_1.AuthModule,
             employees_module_1.EmployeesModule,
             leaves_module_1.LeavesModule,
